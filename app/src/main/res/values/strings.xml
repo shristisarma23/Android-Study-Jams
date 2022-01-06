@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Notify</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="container_transform_name">transform_to_add</string>
+    <string name="todo_detail_transform">todo_detail_transition</string>
+    <string name="todo_item_card">todo_item_%1$d</string>
+
+    <string-array name="priorities">
+        <item>High Priority</item>
+        <item>Medium Priority</item>
+        <item>Low Priority</item>
+    </string-array>
+</resources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/todoListFragment"
+        android:name="com.example.todoapp.fragments.TodoListFragment.TodoListFragment"
+        android:label="Notes"
+        tools:layout="@layout/fragment_todo_list" >
+        <action
+            android:id="@+id/action_todoListFragment_to_addTodoFragment"
+            app:destination="@id/addTodoFragment" />
+        <action
+            android:id="@+id/action_todoListFragment_to_updateTodoFragment"
+            app:destination="@id/updateTodoFragment" />
+        <action
+            android:id="@+id/action_todoListFragment_to_deleteAllBottomSheetDialogFragment"
+            app:destination="@id/deleteAllBottomSheetDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTodoFragment"
+        android:name="com.example.todoapp.fragments.AddTodoFragment.AddTodoFragment"
+        android:label="Add"
+        tools:layout="@layout/fragment_add_todo" >
+        <action
+            android:id="@+id/action_addTodoFragment_to_todoListFragment"
+            app:destination="@id/todoListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateTodoFragment"
+        android:name="com.example.todoapp.fragments.UpdateTodoFragment.UpdateTodoFragment"
+        android:label="Update"
+        tools:layout="@layout/fragment_update_todo" >
+        <action
+            android:id="@+id/action_updateTodoFragment_to_todoListFragment"
+            app:destination="@id/todoListFragment" />
+        <argument
+            android:name="currentItem"
+            app:argType="com.example.todoapp.data.models.TodoData" />
+        <argument
+            android:name="currentItemId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_updateTodoFragment_to_deleteBottomSheetDialogFragment"
+            app:destination="@id/deleteBottomSheetDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.todoapp.fragments.SplashScreenFragment.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_todoListFragment"
+            app:destination="@id/todoListFragment"
+            app:popUpTo="@id/my_nav"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true"/>
+    </fragment>
+    <dialog
+        android:id="@+id/deleteBottomSheetDialogFragment"
+        android:name="com.example.todoapp.fragments.UpdateTodoFragment.DeleteBottomSheetDialogFragment"
+        android:label="fragment_delete_bottom_sheet_dialog"
+        tools:layout="@layout/fragment_delete_bottom_sheet_dialog" >
+        <argument
+            android:name="currentDeleteItem"
+            app:argType="com.example.todoapp.data.models.TodoData" />
+    </dialog>
+    <fragment
+        android:id="@+id/deleteAllBottomSheetDialogFragment"
+        android:name="com.example.todoapp.fragments.TodoListFragment.DeleteAllBottomSheetDialogFragment"
+        android:label="fragment_delete_all_bottom_sheet_dialog"
+        tools:layout="@layout/fragment_delete_all_bottom_sheet_dialog" />
+</navigation>
