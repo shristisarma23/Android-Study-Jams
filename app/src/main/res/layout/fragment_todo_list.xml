@@ -65,7 +65,7 @@
             android:id="@+id/listFab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:backgroundTint="@color/purple_500"
+            app:backgroundTint="@color/purple_200"
             android:src="@drawable/add"
             app:tint="@color/white"
             app:layout_dodgeInsetEdges="top"
